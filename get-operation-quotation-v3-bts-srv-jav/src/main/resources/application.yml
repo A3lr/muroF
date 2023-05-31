@@ -1,0 +1,19 @@
+myapp:
+  properties:
+    obtenerDatosCotizacionV3URI: ${ENVIRONMENT_URLBTSRT:http://desacoreapp01.forum.local/btdesarrollo/}odwsbt_BTEventosWF_v1.aspx?ObtenerDatosCotizacionV3
+server:
+  port: 9914
+info:
+  version: "v1"
+spring:
+  application:
+    name: get-operation-quotation-v3-bts
+#Metricas de Actuator.
+management:
+    endpoint:
+        health:
+            show-details: 'always'
+    endpoints:
+        web:
+            exposure:
+                include: health,info,metrics

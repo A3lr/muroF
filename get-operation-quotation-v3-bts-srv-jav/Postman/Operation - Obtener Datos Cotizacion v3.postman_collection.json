@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "3ce340b0-2679-4d0a-a72f-1011dcf26717",
+		"name": "Operation - Obtener Datos Cotizacion v3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6918848"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api-arq-introspect-dev.apps.osd-forum.a8p2.p1.openshiftapps.com/api/token/v1/accessToken?username=user_btt_intros&password=Admin1234&client_id=app_introspection&client_secret=b6d7792b-48b5-4fed-8d41-0a2157e59209&grant_type=password",
+					"protocol": "https",
+					"host": [
+						"api-arq-introspect-dev",
+						"apps",
+						"osd-forum",
+						"a8p2",
+						"p1",
+						"openshiftapps",
+						"com"
+					],
+					"path": [
+						"api",
+						"token",
+						"v1",
+						"accessToken"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user_btt_intros"
+						},
+						{
+							"key": "password",
+							"value": "Admin1234"
+						},
+						{
+							"key": "client_id",
+							"value": "app_introspection"
+						},
+						{
+							"key": "client_secret",
+							"value": "b6d7792b-48b5-4fed-8d41-0a2157e59209"
+						},
+						{
+							"key": "grant_type",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SOAP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Btinreq\": {\r\n        \"Canal\": \"BTINTERNO\",\r\n        \"Requerimiento\": \"1\",\r\n        \"Usuario\": \"BTS_DUMMY\",\r\n        \"Token\": \"\",\r\n        \"Device\": \"1\"\r\n    },\r\n    \"Instancia\": \"16028\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://desacoreapp01.forum.local/btdesarrollo/odwsbt_BTEventosWF_v1.aspx?ObtenerDatosCotizacionV3",
+					"protocol": "http",
+					"host": [
+						"desacoreapp01",
+						"forum",
+						"local"
+					],
+					"path": [
+						"btdesarrollo",
+						"odwsbt_BTEventosWF_v1.aspx"
+					],
+					"query": [
+						{
+							"key": "ObtenerDatosCotizacionV3",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Canal",
+						"value": "BTINTERNO",
+						"type": "text"
+					},
+					{
+						"key": "Usuario",
+						"value": "BTS_DUMMY",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Requerimiento",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9914/operation/quotation-v3/v1/16028",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9914",
+					"path": [
+						"operation",
+						"quotation-v3",
+						"v1",
+						"16028"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Datos Cotizacion v3",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Canal",
+						"value": "BTINTERNO",
+						"type": "text"
+					},
+					{
+						"key": "Usuario",
+						"value": "BTS_DUMMY",
+						"type": "text"
+					},
+					{
+						"key": "Device",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Requerimiento",
+						"value": "1",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://get-operation-quotation-v3-bts-dev.apps.osd-forum.a8p2.p1.openshiftapps.com/operation/quotation-v3/v1/16028",
+					"protocol": "https",
+					"host": [
+						"get-operation-quotation-v3-bts-dev",
+						"apps",
+						"osd-forum",
+						"a8p2",
+						"p1",
+						"openshiftapps",
+						"com"
+					],
+					"path": [
+						"operation",
+						"quotation-v3",
+						"v1",
+						"16028"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

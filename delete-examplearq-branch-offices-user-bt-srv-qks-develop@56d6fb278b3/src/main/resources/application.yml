@@ -1,0 +1,25 @@
+quarkus:
+  http:
+    port: 9009
+    cors: true 
+       origins:http://prodconfluence01.forum.local:8090,*.openshiftapps.com
+       methods:GET,PUT,POST
+       headers:X-Custom
+       exposed-headers:Content-Disposition
+       access-control-max-age:24H
+       access-control-allow-credentials:true
+  application:
+    version: v1
+  swagger-ui:
+    always-include: true
+  smallrye-openapi:
+    path: /swagger        
+  log:
+    console:
+      format:%d{HH:mm:ss} %-5p [%c{2.}] (%t) %s%e%n
+      level:INFO
+      color:false
+    category:
+      "io.quarkus":
+         level: INFO
+SP_ELIMINAR_SUCURSAL_USUARIO_BT: call spEP_EliminarSucursalesUsuario(?,?)

@@ -1,0 +1,52 @@
+<configuration>
+	<springProperty scope="context" name="springAppName"
+		source="spring.application.name" />
+	<springProperty scope="context" name="springServerPort"
+		source="server.port" />
+
+	<appender name="RESTSERVICE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date %level [%thread] [ApplicationName:${springAppName}]
+				[%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ERRORSERVICE"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date %level [%thread] [ApplicationName:${springAppName}]
+				[%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%date %level [%thread] [ApplicationName:${springAppName}]
+				[%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+
+		</encoder>
+	</appender>
+
+	<logger name="restservice" level="INFO">
+		<appender-ref ref="RESTSERVICE" />
+	</logger>
+	<logger name="errorservice" level="ERROR">
+		<appender-ref ref="ERRORSERVICE" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="RESTSERVICE" />
+	</root>
+
+	<root level="ERROR">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="ERRORSERVICE" />
+	</root>
+
+</configuration> 
